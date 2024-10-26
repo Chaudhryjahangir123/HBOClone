@@ -1,0 +1,153 @@
+* {
+    font-family: 'Sintony', sans-serif;
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('Images/hbobg.png'); /* Update the file extension if needed */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Sintony', sans-serif;
+    font-weight: 120;
+  }
+.who{
+    margin-top: 30px;
+}
+.who-image {
+    width: 250px; 
+    height: auto; 
+  }
+
+.container {
+    text-align: center;
+    background: none;
+    color: white;
+    padding: 20px;
+}
+
+h2 {
+    font-family: 'Sintony',sans-serif;
+}
+.head{
+    margin-top: -80px;
+}
+.profiles {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;     /* Centers items vertically */
+    width: 100%;
+    margin-top: 100px;
+    gap: 80px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.profile img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    
+    border-radius: 50%;
+    border: 5px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+#felipe img:hover {
+    border-color: #3a8aff;
+}
+
+#mylenna img:hover {
+    border-color: #ff4081;
+}
+
+.profile h2 {
+    margin-top: 10px;
+    font-weight: lighter;
+    font-size: medium;
+}
+
+.manager-profiles {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 58px;
+}
+
+.manager-profiles button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 5px 50px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.manager-profiles button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+/* Existing CSS ... */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Optional: adds a slight blur effect */
+}
+
+.popup-content {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.9)); /* Gradient blackish background */
+    color: white; /* White text for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for added depth */
+}
+
+.popup-content input, .popup-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background for input fields */
+    color: white; /* White text for input */
+}
+
+.popup-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent button */
+    color: white;
+}
+
+.popup-content #saveProfile {
+    background-color: #28a745; /* Green for save button */
+}
+
+.popup-content #cancelProfile {
+    background-color: #dc3545; /* Red for cancel button */
+}

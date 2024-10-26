@@ -1,0 +1,422 @@
+* {
+    font-family: 'Sintony', sans-serif;
+  }
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    background-image: url('Images/hbobg.png');
+    background-size: cover; /* Ensures the image covers the whole background */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Ensures it stretches across the entire width */
+    height: 60px;
+    background-color: transparent; /* Keeps it invisible */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000; /* Ensure navbar is on top */
+    margin: 0;
+    box-sizing: border-box; /* Ensures padding does not affect layout */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+.nav-logo img {
+    width: 130px; /* Adjust logo width as needed */
+    height: 22px;
+}
+
+.sidebar-btn, .search-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sidebar-btn img, .search-btn img {
+    width: 24px; /* Set width of icons */
+    height: 24px; /* Set height of icons */
+}
+
+.profile-picture {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.profile-picture img {
+    width: 35px; /* Match the icon size */
+    height: 35px; /* Match the icon size */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-picture span {
+    font-size: 19px;
+    color: #fff;
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+
+.friend {
+    position: relative; /* Establish a positioning context */
+}
+
+.cover {
+    display: block;
+    width: 1467px; /* Adjust as needed */
+    height: 825px; /* Maintain aspect ratio */
+    position: relative; /* Add positioning context for z-index */
+    z-index: 1; /* Ensure it's below the navbar */
+}
+
+.clogo {
+    position: absolute; /* Allows it to overlay the cover image */
+    left: 100px; /* Adjust horizontal position */
+    top: 55%; /* Center vertically */
+    transform: translateY(-50%);
+    width: 328px; /* Adjust size as needed */
+    height: 99px; /* Maintain aspect ratio */
+    z-index: 2; /* Above the cover image */
+}
+
+.text {
+    position: absolute; /* Allows it to overlay the cover image */
+    left: 100px; /* Adjust horizontal position */
+    top: 66%; /* Adjust as needed */
+    transform: translateY(-50%);
+    z-index: 2; /* Above the cover image */
+}
+
+.button-and-watch {
+    position: absolute;
+    left: 100px;
+    top: 74%; /* Adjust vertical position as needed */
+    display: flex;
+    flex-direction: column; /* Stack buttons and text vertically */
+    align-items: flex-start; /* Align text and buttons to the left */
+    gap: 10px; /* Add some space between the buttons and the text */
+    z-index: 2; /* Keep above the cover image */
+}
+
+.button-container {
+    display: flex; /* Align buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
+
+.button1 {
+    width: 58px; /* Adjust size as needed */
+    height: 58px; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.button2 {
+    width: 153px; /* Adjust size as needed */
+    height: 44px; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-top: 9px;
+    margin-left: 10px;
+}
+
+/* Movie Section with Overlay Background */
+.movie-section {
+    position: relative;
+    background-image: url('Images/Overlay.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding: 50px 100px 0;
+}
+
+
+/* Container for movie boxes */
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    z-index: 2;
+}
+
+/* Movie Boxes */
+.movie-box {
+    width: 200px;
+    height: auto;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; /* Prevents image overflow */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border-radius: 0px; /* Optional: Add a slight roundness */
+}
+
+/* Apply purple gradient outline on hover */
+.movie-box:hover {
+    outline: 4px solid;
+    outline-color: transparent;
+    outline-offset: 0; /* Makes sure the outline is drawn inside without shifting the element */
+    box-shadow: 0 0 10px 4px rgba(155, 89, 182, 0.7); /* Purple shadow effect */
+    transition: outline 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image inside Movie Boxes */
+.movie-img {
+    font-weight: lighter;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth image transition */
+}
+
+/* No additional image scaling or movement, just the outline effect */
+
+.cw {
+    display: block;
+    margin-top: 120px; /* Adjust spacing between title and movie boxes */
+    z-index: 2;
+}
+.newandt {
+    margin-top: 50px;
+}
+.slider {
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+    width: calc(3 * 548px + 20px); /* Width for 3 movies plus gap */
+    margin: 0 auto; /* Center the slider */
+}
+
+
+.container2 {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px; /* Add this line for spacing */
+    margin-top: 30px;
+}
+
+
+.movie2-box {
+    width: 548px; /* Set the desired width */
+    height: 307px; /* Set the desired height */
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+    overflow: hidden; /* Prevents image overflow */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border-radius: 0px; /* Optional: Add a slight roundness */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100; /* Ensure buttons are on top */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* Movie Boxes */
+.movie2-box {
+    margin-left: 9px;
+    width: 548px;
+    height: 307px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 1;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden; /* Prevents image overflow */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border-radius: 0px; /* Optional: Add a slight roundness */
+}
+
+/* Apply purple gradient outline on hover */
+.movie2-box:hover {
+    outline: 4px solid;
+    outline-color: transparent;
+    outline-offset: 0; /* Makes sure the outline is drawn inside without shifting the element */
+    box-shadow: 0 0 10px 4px rgba(155, 89, 182, 0.7); /* Purple shadow effect */
+    transition: outline 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image inside Movie Boxes */
+.movie2-img {
+    font-weight: lighter;
+    width: 426px;
+    height: 256px;
+    transition: transform 0.3s ease; /* Smooth image transition */
+}
+.headnewandt{
+    margin-top: 50px;
+}
+.movie3-section {
+    padding: 50px 100px 0;
+}
+
+.slider2 {
+    position: relative;
+    overflow: hidden;
+    width: calc(6 * 200px + 20px); /* Adjust for visible items */
+}
+
+.container3 {
+    margin-top: 10px;
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px; /* Spacing between boxes */
+}
+
+.movie-box3:hover {
+    outline: 4px solid;
+    outline-color: transparent;
+    outline-offset: 0; /* Makes sure the outline is drawn inside without shifting the element */
+    box-shadow: 0 0 10px 4px rgba(155, 89, 182, 0.7); /* Purple shadow effect */
+    transition: outline 0.3s ease, box-shadow 0.3s ease;
+}
+/* General Responsive Adjustments */
+@media (max-width: 1200px) {
+    .cover {
+        width: 100%;
+        height: auto;
+    }
+
+    .friend,
+    .movie-section,
+    .movie3-section {
+        padding: 20px;
+    }
+
+    .slider, .slider2 {
+        width: 100%; /* Ensures full width on smaller screens */
+    }
+
+    .container2, .container3 {
+        gap: 10px;
+    }
+}
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 0 10px;
+    }
+
+    .nav-logo img {
+        width: 100px;
+    }
+
+    .profile-picture img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .cover, .movie-box, .movie2-box, .movie-box3 {
+        width: 100%;
+        height: auto;
+    }
+
+    .button-and-watch {
+        left: 20px;
+        top: 70%; /* Adjusts positioning on smaller screens */
+    }
+
+    .button1, .button2 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cw, .headnewandt img {
+        width: 80%;
+    }
+
+    .slider, .slider2 {
+        width: 100%;
+    }
+
+    .container, .container2, .container3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+    .nav-logo img {
+        width: 80px;
+        height: auto;
+    }
+
+    .profile-picture span {
+        display: none; /* Hide profile name on small screens */
+    }
+
+    .sidebar-btn, .search-btn {
+        padding: 5px;
+    }
+
+    .button-and-watch {
+        top: 65%;
+        left: 10px;
+    }
+
+    .button1, .button2 {
+        width: 35px;
+        height: 35px;
+    }
+
+    .movie-box, .movie2-box, .movie-box3 {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .slider, .slider2 {
+        overflow-x: auto;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .prev, .next {
+        display: none; /* Hide slider buttons on small screens */
+    }
+
+    .movie-section, .movie3-section {
+        padding: 10px;
+    }
+
+    .headnewandt img {
+        width: 100%;
+    }
+}

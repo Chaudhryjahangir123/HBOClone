@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCD Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <img src="Images/Vector.png" >
+        </div>
+        <div class="who">
+            <img src="Images/Who Is Watching_.png" alt="" class="who-image">
+        </div>
+        <div class="profiles"></div>
+        <div class="manager-profiles">
+            <button id="addAdult">+ ADULT</button>
+            <button id="addKid">+ KID</button>
+        </div>
+    </div>
+
+    <!-- Popup Form -->
+    <div class="popup" id="popupForm">
+        <div class="popup-content">
+            <h3>Add Profile</h3>
+            <label for="profileName">Profile Name:</label>
+            <input type="text" id="profileName" placeholder="Enter name">
+            
+            <label for="profileType">Profile Type:</label>
+            <select id="profileType">
+                <option value="adult">Adult</option>
+                <option value="kid">Kid</option>
+            </select>
+            
+            <button id="saveProfile">Save</button>
+            <button id="cancelProfile">Cancel</button>
+        </div>
+    </div>
+
+    <script src="profiles.js"></script>
+
+</body>
+</html>

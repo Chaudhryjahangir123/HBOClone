@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <!-- Sidebar Button with Local Icon -->
+            <button class="sidebar-btn">
+                <img src="Images/sidebar.png" alt="" width="24" height="24">
+            </button>
+            <!-- Search Button with Local Icon -->
+            <button class="search-btn">
+                <img src="Images/search.png" alt="" width="24" height="24">
+            </button>
+        </div>
+        <div class="nav-logo">
+            <img src="Images/Vector.png" alt="Logo">
+        </div>
+        <div class="nav-right">
+            <div class="profile-picture">
+                <img src="Images/avatar.png" alt="Profile Picture">
+                <span>Jahangir</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="friend">
+        <img src="Images/Cover Friends.png" alt="" class="cover">
+        <img src="Images/Logo Friends.png" alt="" class="clogo">
+        <img src="Images/Content.png" alt="" class="text">
+        
+        <!-- Button and Continue Watching container -->
+        <div class="button-and-watch">
+            <div class="button-container">
+                <img src="Images/Icon.png" alt="Button 1" class="button1">
+                <img src="Images/Btn.png" alt="Button 2" class="button2">
+            </div>
+            <img src="Images/Title.png" alt="" class="cw">
+        </div>
+    </div>
+
+    <!-- New Section for Movies, placed right below the Continue Watching section -->
+    <div class="movie-section">
+        <div class="container">
+            <div class="movie-box" onclick="alert('Movie 1 clicked!')">
+                <img src="Images/Rectangle 1 (1).png" alt="Movie 1" class="movie-img">
+                Batman 
+            </div>
+            <div class="movie-box" onclick="alert('Movie 2 clicked!')">
+                <img src="Images/Rectangle 1.png" alt="Movie 2" class="movie-img">
+                Friends
+            </div>
+            <div class="movie-box" onclick="alert('Movie 3 clicked!')">
+                <img src="Images/M3.png" alt="Movie 3" class="movie-img">
+                The Secret Garden
+            </div>
+            <div class="movie-box" onclick="alert('Movie 4 clicked!')">
+                <img src="Images/m4.png" alt="Movie 4" class="movie-img">
+                Watchmen
+            </div>
+        </div>
+        <div class="headnewandt">
+          <img src="Images/newandt.png" alt="" class="headnew">
+          <div class="slider">
+              <div class="container2">
+                  <div class="movie2-box" onclick="alert('Movie 1 clicked!')">
+                      <img src="Images/tom.png" alt="Movie 1" class="movie2-img">
+                      Tom And Jerry The Movie
+                  </div>
+                  <div class="movie2-box" onclick="alert('Movie 2 clicked!')">
+                      <img src="Images/gossip.png" alt="Movie 2" class="movie2-img">
+                      Gossip Girls
+                  </div>
+                  <div class="movie2-box" onclick="alert('Movie 3 clicked!')">
+                      <img src="Images/raise.jpeg" alt="Movie 3" class="movie2-img">
+                      Raised By Wolves
+                  </div>
+                  <div class="movie2-box" onclick="alert('Movie 4 clicked!')">
+                      <img src="Images/m4.png" alt="Movie 4" class="movie2-img">
+                      Watchmen
+                  </div>
+              </div>
+              <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          </div>
+      </div>            
+    </div> 
+    <div class="movie3-section">
+        <div class="headnewandt">
+            <img src="Images/newandt.png" alt="" class="headnew">
+            <div class="slider2"> <!-- Renamed slider to slider2 -->
+                <div class="container3">
+                    <div class="movie-box3" onclick="alert('Movie 1 clicked!')">
+                        <img src="Images/Rectangle 1 (1).png" alt="Movie 1" class="movie3-img">
+                        Batman 
+                    </div>
+                    <div class="movie-box3" onclick="alert('Movie 2 clicked!')">
+                        <img src="Images/Rectangle 1.png" alt="Movie 2" class="movie3-img">
+                        Friends
+                    </div>
+                    <div class="movie-box3" onclick="alert('Movie 3 clicked!')">
+                        <img src="Images/M3.png" alt="Movie 3" class="movie3-img">
+                        The Secret Garden
+                    </div>
+                    <div class="movie-box3" onclick="alert('Movie 4 clicked!')">
+                        <img src="Images/m4.png" alt="Movie 4" class="movie3-img">
+                        Watchmen
+                    </div>
+                    <div class="movie-box3" onclick="alert('Movie 5 clicked!')">
+                        <img src="Images/m5.png" alt="Movie 5" class="movie3-img">
+                        Inception
+                    </div>
+                    <div class="movie-box3" onclick="alert('Movie 6 clicked!')">
+                        <img src="Images/m6.png" alt="Movie 6" class="movie3-img">
+                        The Matrix
+                    </div>
+                    <div class="movie-box3" onclick="alert('Movie 7 clicked!')">
+                        <img src="Images/m7.png" alt="Movie 7" class="movie3-img">
+                        Interstellar
+                    </div>
+                    <div class="movie-box3" onclick="alert('Movie 8 clicked!')">
+                        <img src="Images/m8.png" alt="Movie 8" class="movie3-img">
+                        The Dark Knight
+                    </div>
+                </div>
+                <button class="prev" onclick="moveSlide2(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide2(1)">&#10095;</button>
+            </div>
+        </div>
+    </div>
+        
+<script src="mainjava.js"></script>
+</body>
+</html>
