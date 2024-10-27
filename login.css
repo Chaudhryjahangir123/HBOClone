@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Sintony', sans-serif;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('Images/hbo-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(135deg, #000000, #6a0dad);
 }
 
 .login-container {
@@ -51,8 +51,11 @@ form input[type="password"] {
     color: #fff;
     font-size: 16px;
 }
-
-button[type="submit"] {
+.log1{
+    width: 130px;
+    margin-left: 114px;
+}
+.signin {
     width: 100%;
     padding: 12px;
     background-color: #3e7ddb;
@@ -64,7 +67,7 @@ button[type="submit"] {
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+.signin:hover {
     background-color: #285f9e;
 }
 

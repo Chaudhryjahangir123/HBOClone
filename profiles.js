@@ -100,3 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('saveProfile').addEventListener('click', addNewProfile);
     document.getElementById('cancelProfile').addEventListener('click', hidePopup);
 });
+function redirectToHome() {
+    window.location.href = 'home.html';
+    return false; // Prevents actual form submission
+}
