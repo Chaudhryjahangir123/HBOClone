@@ -17,7 +17,7 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.226);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     color: #fff;
@@ -41,7 +41,8 @@ form label {
 }
 
 form input[type="text"],
-form input[type="password"] {
+form input[type="password"],
+form input[type="email"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 10px;
