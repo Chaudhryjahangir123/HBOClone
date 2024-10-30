@@ -78,7 +78,7 @@ body {
 
 .cover {
     display: block;
-    width: 1467px; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
     height: 825px; /* Maintain aspect ratio */
     position: relative; /* Add positioning context for z-index */
     z-index: 1; /* Ensure it's below the navbar */
