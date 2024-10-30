@@ -11,24 +11,25 @@
         <div class="login-box">
             <img src="Images/splashscreen 1.png" alt="" class="log1">
             <p>Sign in to continue streaming</p>
-            <form action="/post" method="post" onsubmit="return redirectToHome()">
+            <form action="#" method="post" onsubmit="return validateAndRedirect()">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
                 
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required placeholder="At least 8 characters, including letters and numbers">
+                
                 <button type="submit" class="signin">Sign In</button>
                   
                 <div class="options">
                     <a href="forgot-password.html">Forgot Password?</a>
                     <a href="create-account.html">Create Account</a>
+                    
                 </div>
                 
             </form>
         </div>
     </div>
     
-    
-    <script src="profiles.js"></script>
+    <script src="loginfunc.js"></script>
 </body>
 </html>
