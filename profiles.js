@@ -21,6 +21,11 @@ class Profile {
         img.onmouseover = () => img.style.borderColor = this.borderColor;
         img.onmouseout = () => img.style.borderColor = 'transparent';
         
+        // Add click event to the image to redirect to mainhome.html
+        img.onclick = () => {
+            window.location.href = 'mainhome.html';
+        };
+
         // Create name element
         const nameElement = document.createElement('h2');
         nameElement.textContent = this.name;
@@ -100,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('saveProfile').addEventListener('click', addNewProfile);
     document.getElementById('cancelProfile').addEventListener('click', hidePopup);
 });
+
 function redirectToHome() {
     window.location.href = 'home.html';
     return false; // Prevents actual form submission

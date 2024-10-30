@@ -22,6 +22,15 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     color: #fff;
 }
+.login2-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.226);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
 
 .login-box h2 {
     font-size: 28px;
@@ -43,7 +52,7 @@ form label {
 form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
-    width: 100%;
+    width: 360px;
     padding: 12px;
     margin-bottom: 10px;
     border: none;
