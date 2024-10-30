@@ -39,3 +39,5 @@ function handleSubmit() {
 
     return false; // Prevent form submission if no email is provided
 }
+
+
