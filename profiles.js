@@ -1,4 +1,3 @@
-// Profile class definition
 class Profile {
     constructor(name, imageSrc, borderColor) {
         this.name = name;
@@ -6,7 +5,7 @@ class Profile {
         this.borderColor = borderColor;
     }
 
-    // Method to render the profile into HTML
+    // Method to render the profile with a cross button for deletion
     renderProfile() {
         // Create profile div
         const profileDiv = document.createElement('div');
@@ -16,31 +15,41 @@ class Profile {
         const img = document.createElement('img');
         img.src = this.imageSrc;
         img.alt = `${this.name}'s Avatar`;
-        
+
         // Set hover effect for profile border
         img.onmouseover = () => img.style.borderColor = this.borderColor;
         img.onmouseout = () => img.style.borderColor = 'transparent';
-        
-        // Add click event to the image to redirect to mainhome.html
+
+        // Add click event to redirect to mainhome.html
         img.onclick = () => {
-            window.location.href = 'mainhome.html';
+            window.location.href = 'mainhome.html'; // Redirect to mainhome.html
         };
 
         // Create name element
         const nameElement = document.createElement('h2');
         nameElement.textContent = this.name;
 
-        // Append img and name to the profile div
+        // Create delete (cross) button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = '✖'; // Cross symbol
+        deleteButton.classList.add('delete-button');
+        deleteButton.onclick = () => {
+            profileDiv.remove(); // Remove the profile from the DOM
+        };
+
+        // Append image, name, and delete button to the profile div
         profileDiv.appendChild(img);
         profileDiv.appendChild(nameElement);
+        profileDiv.appendChild(deleteButton); // Add cross button below
 
         return profileDiv;
     }
 }
 
+
 // Function to initialize profiles and add them to the HTML
 function initializeProfiles() {
-    // Array of profiles (You can add more profiles here if needed)
+    // Example profiles (You can add more profiles here if needed)
     const profiles = [
         new Profile('Jahangir', 'Images/avatar.png', '#3a8aff'),
         new Profile('Sansa', 'Images/avatar2.png', '#ff4081')
@@ -55,6 +64,26 @@ function initializeProfiles() {
     });
 }
 
+// Variable to store the chosen image path
+let selectedImageSrc = ''; 
+
+// Function to handle profile picture selection
+function selectProfilePicture(event) {
+    // Remove 'selected' class from all options
+    document.querySelectorAll('.profile-pic-option').forEach(pic => {
+        pic.classList.remove('selected');
+    });
+    
+    // Add 'selected' class to clicked image and store its src
+    event.target.classList.add('selected');
+    selectedImageSrc = event.target.getAttribute('data-src');
+}
+
+// Attach click event to each profile picture option
+document.querySelectorAll('.profile-pic-option').forEach(pic => {
+    pic.addEventListener('click', selectProfilePicture);
+});
+
 // Function to show the popup form
 function showPopup() {
     const popup = document.getElementById('popupForm');
@@ -67,29 +96,31 @@ function hidePopup() {
     popup.style.display = 'none'; // Hide popup
 }
 
-// Function to add a new profile
+// Function to add a new profile with input validation
 function addNewProfile() {
-    const profileName = document.getElementById('profileName').value;
+    const profileName = document.getElementById('profileName').value.trim();
     const profileType = document.getElementById('profileType').value;
+    const namePattern = /^[A-Za-z]+$/; // Only allows alphabets
 
-    let borderColor = '';
-    let imageSrc = '';
-
-    // Set border color and image based on profile type
-    if (profileType === 'adult') {
-        borderColor = '#3a8aff'; // Blue border for adults
-        imageSrc = 'Images/avatar.png';
-    } else {
-        borderColor = '#ff4081'; // Pink border for kids
-        imageSrc = 'Images/avatar2.png';
+    // Validate profile name and check if a picture is selected
+    if (!profileName || !namePattern.test(profileName)) {
+        alert('Please enter a valid profile name using only alphabets.');
+        return; // Stop if validation fails
+    }
+    if (!selectedImageSrc) {
+        alert('Please select a profile picture.');
+        return; // Stop if no picture is selected
     }
 
-    const newProfile = new Profile(profileName, imageSrc, borderColor);
+    let borderColor = profileType === 'adult' ? '#3a8aff' : '#ff4081';
+
+    const newProfile = new Profile(profileName, selectedImageSrc, borderColor);
     const profilesContainer = document.querySelector('.profiles');
     profilesContainer.appendChild(newProfile.renderProfile());
 
     // Clear input fields and hide popup
     document.getElementById('profileName').value = '';
+    selectedImageSrc = ''; // Reset the selected image
     hidePopup();
 }
 
@@ -105,8 +136,3 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('saveProfile').addEventListener('click', addNewProfile);
     document.getElementById('cancelProfile').addEventListener('click', hidePopup);
 });
-
-function redirectToHome() {
-    window.location.href = 'home.html';
-    return false; // Prevents actual form submission
-}

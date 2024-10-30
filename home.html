@@ -25,22 +25,31 @@
     </div>
 
     <!-- Popup Form -->
-    <div class="popup" id="popupForm">
-        <div class="popup-content">
-            <h3>Add Profile</h3>
-            <label for="profileName">Profile Name:</label>
-            <input type="text" id="profileName" placeholder="Enter name">
-            
-            <label for="profileType">Profile Type:</label>
-            <select id="profileType">
-                <option value="adult">Adult</option>
-                <option value="kid">Kid</option>
-            </select>
-            
-            <button id="saveProfile">Save</button>
-            <button id="cancelProfile">Cancel</button>
+    <!-- Popup Form -->
+<div class="popup" id="popupForm">
+    <div class="popup-content">
+        <h3>Add Profile</h3>
+        <label for="profileName">Profile Name:</label>
+        <input type="text" id="profileName" placeholder="Enter name">
+        
+        <label for="profileType">Profile Type:</label>
+        <select id="profileType">
+            <option value="adult">Adult</option>
+            <option value="kid">Kid</option>
+        </select>
+        
+        <label>Select Profile Picture:</label>
+        <div class="profile-pictures">
+            <img src="Images/avatar.png" class="profile-pic-option" data-src="Images/avatar.png">
+            <img src="Images/avatar2.png" class="profile-pic-option" data-src="Images/avatar2.png">
+            <!-- Add more images as needed -->
         </div>
+        
+        <button id="saveProfile">Save</button>
+        <button id="cancelProfile">Cancel</button>
     </div>
+</div>
+
 
     <script src="profiles.js"></script>
 
