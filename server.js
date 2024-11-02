@@ -1,76 +1,50 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
-const port = 3019;
+const bodyParser = require('body-parser');
+const { MongoClient } = require('mongodb');
 const app = express();
+const uri = 'mongodb://localhost:27017'; // Replace with your MongoDB connection string
+let db;
 
 // Middleware
 app.use(express.static(__dirname));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Schema
-const userSchema = new mongoose.Schema({
-    username: String,
-    password: String
-}, { timestamps: true });
+// Connect to MongoDB
+MongoClient.connect(uri)
+    .then(client => {
+        console.log('Connected to Database');
+        db = client.db('hbo_clone'); // Replace with your actual database name
+    })
+    .catch(error => console.error(error));
 
-// Model
-const Users = mongoose.model('data', userSchema);
+// Handle the form submission
+app.post('/post', (req, res) => {
+    const { username, password } = req.body;
+    console.log('Received data:', { username, password });
 
-// MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/user', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('MongoDB connection error:', err));
-
-// Test route to confirm server is running
-app.get('/test', (req, res) => {
-    res.json({ message: 'Server is running!' });
-});
-
-// Route to show login page
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'login.html'));
-});
-
-// Route to save user data
-app.post('/post', async (req, res) => {
-    try {
-        console.log('Received data:', req.body);  // Log received data
-        
-        const { username, password } = req.body;
-        const user = new Users({ username, password });
-        
-        await user.save();
-        console.log('Saved user:', user);  // Log saved user
-        
-        res.json({ 
-            message: 'User saved successfully',
-            user: user
+    // Store login data in MongoDB
+    db.collection('users').insertOne({ username, password })
+        .then(result => {
+            console.log('User added:', result);
+            res.redirect('/home'); // Redirect to home.html
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).send("Error saving data to database.");
         });
-    } catch (error) {
-        console.error('Error saving user:', error);
-        res.status(500).json({ error: error.message });
-    }
 });
 
-// Route to check saved users
-app.get('/check-users', async (req, res) => {
-    try {
-        const users = await Users.find({});
-        res.json({ users });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
+// Serve login.html
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/login.html');
 });
 
-// Start server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+// Serve home.html
+app.get('/home', (req, res) => {
+    res.sendFile(__dirname + '/home.html'); // Ensure you have a home.html
 });
 
-
-
+// Server listening
+app.listen(3000, () => {
+    console.log("Server running on http://localhost:3000");
+});
