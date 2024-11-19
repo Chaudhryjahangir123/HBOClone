@@ -95,7 +95,7 @@ const cloneItems3 = () => {
 cloneItems3(); // Call cloneItems3 once to add the duplicates
 
 // Move slide for the third carousel
-function moveSlide3(direction) {
+//function moveSlide3(direction) {
     currentIndex3 += direction;
 
     // Loop back to the start or end if out of bounds
@@ -109,21 +109,32 @@ function moveSlide3(direction) {
     const offset = currentIndex3 * (200 + 20); // Adjust based on width + margin
     container3.style.transform = `translateX(-${offset}px)`;
 
-    // Check if we are at the last duplicated item and reset the position
-    if (currentIndex3 === totalMovies3 - 2) {
-        setTimeout(() => {
-            container3.style.transition = 'none'; // Disable transition for reset
-            currentIndex3 = 0; // Reset to the first item
-            container3.style.transform = `translateX(0)`; // Go back to the start
+     //Check if we are at the last duplicated item and reset the position
+    //if (currentIndex3 === totalMovies3 - 2) {
+        //setTimeout(() => {
+           // container3.style.transition = 'none'; // Disable transition for reset
+           // currentIndex3 = 0; // Reset to the first item
+           // container3.style.transform = `translateX(0)`; // Go back to the start
             // Re-enable transition after the reset
-            setTimeout(() => {
-                container3.style.transition = 'transform 0.5s ease'; // Re-enable transition
-            }, 20);
-        }, 500); // Delay for the last scroll to complete
-    }
-}
+           // setTimeout(() => {
+               // container3.style.transition = 'transform 0.5s ease'; // Re-enable transition
+           // }, 20);
+      //  }, 500); // Delay for the last scroll to complete
+    //}
+//}
 
 // Auto-scroll for the third carousel (every 3 seconds)
-setInterval(() => {
-    moveSlide3(1);  // Move right (next slide)
-}, 3000); // Adjust the interval for how fast you want the carousel to move
+//setInterval(() => {
+  //  moveSlide3(1);  // Move right (next slide)
+//}, 3000); // Adjust the interval for how fast you want the carousel to move
+// Function to toggle sidebar visibility
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const currentLeft = sidebar.style.left;
+
+    if (currentLeft === '0px') {
+        sidebar.style.left = '-250px'; // Slide out
+    } else {
+        sidebar.style.left = '0px'; // Slide in
+    }
+}

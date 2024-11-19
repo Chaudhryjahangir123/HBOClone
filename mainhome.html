@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <ul class="sidebar-options">
+                <li><a href="#">Option A</a></li>
+                <li><a href="#">Option B</a></li>
+                <li><a href="#">Option C</a></li>
+                <li><a href="#">Option D</a></li>
+                <li><a href="#">Option E</a></li>
+            </ul>
+        </div>
+    </div>
     <nav class="nav-bar">
         <div class="nav-left">
             <!-- Sidebar Button with Local Icon -->
-            <button class="sidebar-btn">
+            <button class="sidebar-btn" onclick="toggleSidebar()">
                 <img src="Images/sidebar.png" alt="" width="24" height="24">
             </button>
             <!-- Search Button with Local Icon -->
@@ -66,7 +77,7 @@
         </div>
         <div class="headnewandt">
           <img src="Images/newandt.png" alt="" class="headnew">
-          <div class="slider">
+          
               <div class="container2">
                   <div class="movie2-box" onclick="alert('Movie 1 clicked!')">
                       <img src="Images/tom.png" alt="Movie 1" class="movie2-img">
@@ -80,19 +91,15 @@
                       <img src="Images/raise.jpeg" alt="Movie 3" class="movie2-img">
                       Raised By Wolves
                   </div>
-                  <div class="movie2-box" onclick="alert('Movie 4 clicked!')">
-                      <img src="Images/m4.png" alt="Movie 4" class="movie2-img">
-                      Watchmen
-                  </div>
+                  
               </div>
-              <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="next" onclick="moveSlide(1)">&#10095;</button>
+              
           </div>
       </div>            
     </div> 
     <div class="movie3-section">
         <div class="headnewandt">
-            <img src="Images/newandt.png" alt="" class="headnew">
+            <img src="Images/Title (2).png" alt="" class="headnew">
             <div class="slider2"> <!-- Renamed slider to slider2 -->
                 <div class="container3">
                     <div class="movie-box3" onclick="alert('Movie 1 clicked!')">
@@ -138,30 +145,29 @@
         <div class="headnewandt">
             <img src="Images/Title (1).png" alt="" class="headnew">
             <div class="slider2">
-                <div class="container3">
+                <div class="container4">
                     <div class="movie4-box" onclick="alert('Movie 1 clicked!')">
-                        <img src="Images/Card Stars.png" alt="Movie 1" class="movie3-img">
+                        <img src="Images/Card Stars.png" alt="Movie 1" class="movie4-img">
                         Batman 
                     </div>
                     <div class="movie4-box" onclick="alert('Movie 2 clicked!')">
-                        <img src="Images/Card Stars (1).png" alt="Movie 2" class="movie3-img">
+                        <img src="Images/Card Stars (1).png" alt="Movie 2" class="movie4-img">
                         Friends
                     </div>
                     <div class="movie4-box" onclick="alert('Movie 3 clicked!')">
-                        <img src="Images/Card Stars (2).png" alt="Movie 3" class="movie3-img">
+                        <img src="Images/Card Stars (2).png" alt="Movie 3" class="movie4-img">
                         The Secret Garden
                     </div>
                     <div class="movie4-box" onclick="alert('Movie 4 clicked!')">
-                        <img src="Images/Card Stars (3).png" alt="Movie 4" class="movie3-img">
+                        <img src="Images/Card Stars (3).png" alt="Movie 4" class="movie4-img">
                         Watchmen
                     </div>
                     <div class="movie4-box" onclick="alert('Movie 5 clicked!')">
-                        <img src="Images/Card Stars (4).png" alt="Movie 5" class="movie3-img">
+                        <img src="Images/Card Stars (4).png" alt="Movie 5" class="movie4-img">
                         Inception
                     </div>
                 </div>
-                <button class="prev" onclick="moveSlide3(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide3(1)">&#10095;</button>
+                
             </div>
         </div>
     </div>

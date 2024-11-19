@@ -48,11 +48,16 @@ body {
     cursor: pointer;
 }
 
-.sidebar-btn img, .search-btn img {
+.sidebar-btn img {
+    
     width: 24px; /* Set width of icons */
     height: 24px; /* Set height of icons */
 }
-
+.search-btn img{
+    width: 24px; /* Set width of icons */
+    height: 24px;
+    margin-left: 40px;
+}
 .profile-picture {
     display: flex;
     align-items: center;
@@ -249,7 +254,7 @@ body {
 
 /* Movie Boxes */
 .movie2-box {
-    margin-left: 9px;
+    margin-left: 2px;
     width: 548px;
     height: 307px;
     color: white;
@@ -258,9 +263,7 @@ body {
     z-index: 2;
     font-weight: 1;
     letter-spacing: 1px;
-    position: relative;
-    overflow: hidden; /* Prevents image overflow */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+    
     border-radius: 0px; /* Optional: Add a slight roundness */
 }
 
@@ -276,8 +279,8 @@ body {
 /* Image inside Movie Boxes */
 .movie2-img {
     font-weight: lighter;
-    width: 426px;
-    height: 256px;
+    width: 548px;
+    height: 307px;
     transition: transform 0.3s ease; /* Smooth image transition */
 }
 .headnewandt{
@@ -487,9 +490,168 @@ body {
 
 /* Apply purple gradient outline on hover */
 .movie4-box:hover {
+    margin-top: -19px;
     outline: 4px solid;
     outline-color: transparent;
     outline-offset: 0; /* Makes sure the outline is drawn inside without shifting the element */
     box-shadow: 0 0 10px 4px rgba(155, 89, 182, 0.7); /* Purple shadow effect */
     transition: outline 0.3s ease, box-shadow 0.3s ease;
+}
+.container4 {
+    margin-top: 10px;
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px; /* Spacing between boxes */
+    width: calc(8 * 200px + 20px); /* Adjust width for 8 items in total */
+}
+.movie4-img{
+    font-weight: lighter;
+    width: 100%;
+    height: 307px;
+    transition: transform 0.3s ease; /* Smooth image transition */
+}
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;  /* Sidebar hidden initially */
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+    color: white;
+    z-index: 999;
+    transition: left .3s ease;
+}
+
+.sidebar-content {
+    padding-top: 50px; /* Space for logo or header */
+}
+
+.sidebar-options {
+    list-style-type: none;
+}
+
+.sidebar-options li {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-options li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color .3s;
+}
+
+.sidebar-options li a:hover {
+    color: #cb47ff; /* Change color on hover */
+}
+
+#main-content {
+    padding: 20px;
+}
+
+.sidebar-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure button is above the sidebar */
+    transition: color .3s;
+}
+
+.sidebar-btn:hover {
+    color: #ff6347; /* Button hover effect */
+}
+
+.content h1 {
+    margin-bottom: 20px;
+}
+/* Navbar Styles */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Navbar height */
+    background-color: transparent; /* Keeps it invisible */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically centers items */
+    padding: 0 20px;
+    z-index: 1000; /* Ensure navbar is on top */
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Left section for sidebar and search buttons */
+.nav-left {
+    display: flex;
+    align-items: center; /* Ensures buttons are vertically centered */
+}
+
+.sidebar-btn {
+    background-color: transparent;
+    border: none;
+    outline: none; /* Remove any outline */
+    padding: 5px;  /* Smaller padding to reduce height */
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-bottom: 0px; /* Adds space between buttons */
+}
+.search-btn {
+    background-color: transparent;
+    border: none;
+    outline: none; /* Remove any outline */
+    padding: 5px;  /* Smaller padding to reduce height */
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 20px; /* Adds space between buttons */
+}
+.sidebar-btn img {
+    width: 24px; /* Set width of icons */
+    height: 24px; /* Set height of icons */
+    margin-bottom: 20px;
+}
+.search-btn img {
+    width: 24px; /* Set width of icons */
+    height: 24px; /* Set height of icons */
+}
+
+/* Ensure sidebar button and search button are vertically aligned */
+.nav-left > button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures the icon is centered within the button */
+    height: 40px; /* Set button height to match navbar height */
+}
+
+/* Logo in the center */
+.nav-logo img {
+    width: 130px;
+    height: 22px;
+}
+
+/* Right section for profile picture */
+.nav-right {
+    display: flex;
+    align-items: center; /* Ensures profile image and text are vertically centered */
+}
+
+.profile-picture img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.profile-picture span {
+    font-size: 14px;
+    color: #fff;
 }
