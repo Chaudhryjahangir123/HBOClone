@@ -1,5 +1,6 @@
 * {
     font-family: 'Sintony', sans-serif;
+    color: #fff;
   }
 html, body {
     margin: 0;
@@ -197,8 +198,10 @@ body {
 .slider {
     position: relative;
     overflow: hidden; /* Hide overflow */
-    width: calc(3 * 548px + 20px); /* Width for 3 movies plus gap */
     margin: 0 auto; /* Center the slider */
+}
+.slider {
+    width: calc(2.5 * 548px + 20px);  /* Adjust width to match JavaScript itemsToShow value */
 }
 
 
@@ -290,12 +293,15 @@ body {
     width: calc(6 * 200px + 20px); /* Adjust for visible items */
 }
 
+
 .container3 {
     margin-top: 10px;
     display: flex;
     transition: transform 0.5s ease;
     gap: 20px; /* Spacing between boxes */
+    width: calc(8 * 200px + 20px); /* Adjust width for 8 items in total */
 }
+
 
 .movie-box3:hover {
     outline: 4px solid;
@@ -419,4 +425,71 @@ body {
     .headnewandt img {
         width: 100%;
     }
+}
+.slider2 {
+    width: calc(6 * 200px + 20px);  /* Matches JavaScript itemsToShow2 value */
+}
+.movie4-box {
+    margin-left: 9px;
+    width: 281px;
+    height: 422px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 1;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden; /* Prevents image overflow */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border-radius: 0px; /* Optional: Add a slight roundness */
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+/* Third carousel container */
+.container3 {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+}
+
+.movie4-box {
+    width: 200px;  /* Set the desired width for the third carousel items */
+    height: auto;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Optional: Apply styles for the 'next' and 'prev' buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100; /* Ensure buttons are on top */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Apply purple gradient outline on hover */
+.movie4-box:hover {
+    outline: 4px solid;
+    outline-color: transparent;
+    outline-offset: 0; /* Makes sure the outline is drawn inside without shifting the element */
+    box-shadow: 0 0 10px 4px rgba(155, 89, 182, 0.7); /* Purple shadow effect */
+    transition: outline 0.3s ease, box-shadow 0.3s ease;
 }
