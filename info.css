@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+   background-image: url('Images/hbobg.png');
+    color: white;
+}
+
+.movie-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Movie Header (Poster, Title, Rating) */
+.movie-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.movie-poster-container {
+    flex: 1;
+    max-width: 300px;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-info {
+    flex: 2;
+    margin-left: 20px;
+}
+
+.movie-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.movie-rating {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.rating-label {
+    font-weight: bold;
+}
+
+.movie-genre,
+.movie-release-year {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Movie Description */
+.movie-description {
+    margin-top: 40px;
+}
+

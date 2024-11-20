@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBO Clone - Action Movies</title>
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <ul class="sidebar-options">
+                <li><a href="mainhome.html">Home</a></li>
+                <li><a href="action.html">Action</a></li>
+                <li><a href="Adventure.html">Adventure</a></li>
+                <li><a href="Fantasy.html">Fantasy</a></li>
+                <li><a href="Horror.html">Horror</a></li>
+            </ul>
+        </div>
+    </div>
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <!-- Sidebar Button with Local Icon -->
+            <button class="sidebar-btn" onclick="toggleSidebar()">
+                <img src="Images/sidebar.png" alt="" width="24" height="24">
+            </button>
+            <!-- Search Button with Local Icon -->
+            <button class="search-btn" onclick="toggleSearchBar()" type="button"> <!-- Added type="button" -->
+                <img src="Images/search.png" alt="" width="24" height="24">
+            </button>
+        </div>
+        <div class="nav-logo">
+            <img src="Images/Vector.png" alt="Logo">
+        </div>
+        <div class="nav-right">
+            <div class="profile-picture">
+                <img src="Images/avatar.png" alt="Profile Picture">
+                <span>Jahangir</span>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="search-bar" class="search-bar">
+        <input type="text" placeholder="Search for a movie..." oninput="filterMovies()" id="search-input">
+        <div id="dropdown-results" class="dropdown-results"></div> <!-- Dropdown container -->
+    </div>
+
+
+        
+        <div class="acmovie-grid">
+            <div class="acmovie">
+                <img src="Images/HOD.jpg" alt="House Of The Dragon">
+                <h3>House Of The Dragon</h3>
+            </div>
+            <div class="acmovie">
+                <img src="Images/Rectangle 3 (2).png" alt="Movie 2">
+                <h3>Game Of Thrones</h3>
+            </div>
+            <div class="acmovie">
+                <img src="Images/Rectangle 3.png" alt="Movie 3">
+                <h3>Justice League</h3>
+            </div>
+            <div class="acmovie">
+                <img src="Images/Rectangle 3 (1).png" alt="House Of The Dragon">
+                <h3>Guns Akimbo</h3>
+            </div>
+            <div class="acmovie">
+                <img src="Images/Rectangle 1 (1).png" alt="Movie 2">
+                <h3>The Batman</h3>
+            </div>
+            <div class="acmovie">
+                <img src="Images/Rectangle 3.png" alt="Movie 3">
+                <h3>Justice League</h3>
+            </div>
+            <!-- Add more movie entries as needed -->
+        </div>
+    
+
+        <script src="mainjava.js"></script>
+</body>
+</html>

@@ -5,29 +5,7 @@ const containerw = document.querySelector('.container2'); // First carousel cont
 const movieItems = document.querySelectorAll('.movie2-box'); // All items in the first carousel
 const totalMovies = movieItems.length;
 
-function moveSlide(direction) {
-    currentIndex += direction;
-    
-    // Infinite Loop: Wrap around to the last slide if at the first, or to the first if at the last
-    if (currentIndex < 0) {
-        currentIndex = totalMovies - 1;  // Wrap to the last item
-    } else if (currentIndex >= totalMovies) {
-        currentIndex = 0;  // Wrap to the first item
-    }
 
-    // Calculate the offset to slide (548px is the width of each item, plus 20px gap)
-    const offset = currentIndex * (548 * itemsToShow + 20); 
-    containerw.style.transform = `translateX(-${offset}px)`;
-}
-
-// Clone the first 2 items and append them to the container for the first carousel
-const cloneItems = () => {
-    for (let i = 0; i < 2; i++) {
-        const clonedItem = movieItems[i].cloneNode(true); // Clone the first 2 items
-        containerw.appendChild(clonedItem); // Append the cloned item to the end
-    }
-};
-cloneItems(); // Call cloneItems once to add the duplicates
 
 // ----- Second Carousel (container3) -----
 let currentIndex2 = 0; // Track the current slide for the second carousel
@@ -141,7 +119,7 @@ function toggleSidebar() {
 function filterMovies() {
     const input = document.querySelector('#search-input').value.trim().toLowerCase();
     const dropdown = document.getElementById('dropdown-results');
-    const movies = document.querySelectorAll('.movie-box');
+    const movies = document.querySelectorAll('.movie2-box');
     
     // Clear the previous dropdown results
     dropdown.innerHTML = '';
@@ -154,7 +132,7 @@ function filterMovies() {
     let resultsFound = false;
 
     movies.forEach(movie => {
-        const title = movie.getAttribute('data-title').toLowerCase();
+        const title = movie.getAttribute('data-title');
         const poster = movie.getAttribute('data-poster'); // Get movie poster URL
         
         // Check if the movie title matches the input
@@ -211,3 +189,9 @@ function closeSearchBar() {
     searchBar.classList.add('hidden');
 }
 
+function navigateToMovieInfo(movieTitle) {
+    // Encode the movie title to make it URL-safe
+    const encodedTitle = encodeURIComponent(movieTitle);
+    // Redirect to movieinfo.html with the title as a query parameter
+    window.location.href = `movieinfo.html?title=${encodedTitle}`;
+}
