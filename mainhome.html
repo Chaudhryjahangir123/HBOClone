@@ -25,7 +25,7 @@
                 <img src="Images/sidebar.png" alt="" width="24" height="24">
             </button>
             <!-- Search Button with Local Icon -->
-            <button class="search-btn">
+            <button class="search-btn" onclick="toggleSearchBar()" type="button"> <!-- Added type="button" -->
                 <img src="Images/search.png" alt="" width="24" height="24">
             </button>
         </div>
@@ -39,6 +39,16 @@
             </div>
         </div>
     </nav>
+    
+    <div id="search-bar" class="search-bar">
+        <input type="text" placeholder="Search for a movie..." oninput="filterMovies()" id="search-input">
+        <div id="dropdown-results" class="dropdown-results"></div> <!-- Dropdown container -->
+    </div>
+    
+    
+    
+        
+      
 
     <div class="friend">
         <img src="Images/Cover Friends.png" alt="" class="cover">
@@ -58,19 +68,19 @@
     <!-- New Section for Movies, placed right below the Continue Watching section -->
     <div class="movie-section">
         <div class="container">
-            <div class="movie-box" onclick="alert('Movie 1 clicked!')">
+            <div class="movie-box" data-title="Batman" data-poster="Images/Rectangle 1 (1).png" onclick="alert('Movie 1 clicked!')">
                 <img src="Images/Rectangle 1 (1).png" alt="Movie 1" class="movie-img">
                 Batman 
             </div>
-            <div class="movie-box" onclick="alert('Movie 2 clicked!')">
+            <div class="movie-box" data-title="Friends" data-poster="Images/Rectangle 1.png" onclick="alert('Movie 2 clicked!')">
                 <img src="Images/Rectangle 1.png" alt="Movie 2" class="movie-img">
                 Friends
             </div>
-            <div class="movie-box" onclick="alert('Movie 3 clicked!')">
+            <div class="movie-box" data-title="The Secret Garden" data-poster="Images/M3.png" onclick="alert('Movie 3 clicked!')">
                 <img src="Images/M3.png" alt="Movie 3" class="movie-img">
                 The Secret Garden
             </div>
-            <div class="movie-box" onclick="alert('Movie 4 clicked!')">
+            <div class="movie-box" data-title="Watchmen" data-poster="Images/m4.png" onclick="alert('Movie 4 clicked!')">
                 <img src="Images/m4.png" alt="Movie 4" class="movie-img">
                 Watchmen
             </div>
@@ -79,15 +89,15 @@
           <img src="Images/newandt.png" alt="" class="headnew">
           
               <div class="container2">
-                  <div class="movie2-box" onclick="alert('Movie 1 clicked!')">
+                  <div class="movie2-box" data-title="Tom And Jerry" onclick="alert('Movie 1 clicked!')">
                       <img src="Images/tom.png" alt="Movie 1" class="movie2-img">
                       Tom And Jerry The Movie
                   </div>
-                  <div class="movie2-box" onclick="alert('Movie 2 clicked!')">
+                  <div class="movie2-box" data-title="Gossip Girls" onclick="alert('Movie 2 clicked!')">
                       <img src="Images/gossip.png" alt="Movie 2" class="movie2-img">
                       Gossip Girls
                   </div>
-                  <div class="movie2-box" onclick="alert('Movie 3 clicked!')">
+                  <div class="movie2-box" data-title="Raised By Wolves" onclick="alert('Movie 3 clicked!')">
                       <img src="Images/raise.jpeg" alt="Movie 3" class="movie2-img">
                       Raised By Wolves
                   </div>
@@ -102,7 +112,7 @@
             <img src="Images/Title (2).png" alt="" class="headnew">
             <div class="slider2"> <!-- Renamed slider to slider2 -->
                 <div class="container3">
-                    <div class="movie-box3" onclick="alert('Movie 1 clicked!')">
+                    <div class="movie-box3" data-title="Batman" onclick="alert('Movie 1 clicked!')">
                         <img src="Images/jj1.png" alt="Movie 1" class="movie3-img">
                         Batman 
                     </div>

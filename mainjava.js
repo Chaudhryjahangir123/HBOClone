@@ -138,3 +138,76 @@ function toggleSidebar() {
         sidebar.style.left = '0px'; // Slide in
     }
 }
+function filterMovies() {
+    const input = document.querySelector('#search-input').value.trim().toLowerCase();
+    const dropdown = document.getElementById('dropdown-results');
+    const movies = document.querySelectorAll('.movie-box');
+    
+    // Clear the previous dropdown results
+    dropdown.innerHTML = '';
+
+    if (input === '') {
+        dropdown.style.display = 'none'; // Hide dropdown if no input
+        return;
+    }
+
+    let resultsFound = false;
+
+    movies.forEach(movie => {
+        const title = movie.getAttribute('data-title').toLowerCase();
+        const poster = movie.getAttribute('data-poster'); // Get movie poster URL
+        
+        // Check if the movie title matches the input
+        if (title.includes(input)) {
+            const dropdownItem = document.createElement('div');
+            dropdownItem.classList.add('dropdown-item');
+            
+            // Create image element for poster
+            const img = document.createElement('img');
+            img.src = poster; // Set image source to movie's poster URL
+            img.alt = title; // Set alt text for accessibility
+            
+            // Create text element for movie title
+            const text = document.createElement('span');
+            text.textContent = title;
+
+            // Append image and text to dropdown item
+            dropdownItem.appendChild(img);
+            dropdownItem.appendChild(text);
+
+            // Optional: Add an event listener to open the movie page or take action on click
+            dropdownItem.onclick = () => {
+                alert('Movie clicked: ' + title);
+                dropdown.style.display = 'none'; // Hide dropdown after selection
+                document.querySelector('#search-input').value = title; // Fill the input with selected title
+            };
+            
+            dropdown.appendChild(dropdownItem);
+            resultsFound = true;
+        }
+    });
+
+    // Show or hide the dropdown based on whether results were found
+    dropdown.style.display = resultsFound ? 'block' : 'none';
+}
+
+
+
+function toggleSearchBar() {
+    console.log("Search button clicked");  // Check if the function is triggered
+    const searchBar = document.getElementById('search-bar');
+    searchBar.classList.toggle('visible'); // Toggle the visibility by adding/removing the 'visible' class
+    
+    // Focus the input field when the search bar is visible
+    if (searchBar.classList.contains('visible')) {
+        document.querySelector('#search-bar input').focus();
+    }
+}
+
+
+
+function closeSearchBar() {
+    const searchBar = document.getElementById('search-bar');
+    searchBar.classList.add('hidden');
+}
+

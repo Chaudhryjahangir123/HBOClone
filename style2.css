@@ -655,3 +655,267 @@ body {
     font-size: 14px;
     color: #fff;
 }
+/* Basic styling for the search bar and navbar */
+
+/* Style for the search bar container */
+#search-bar {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 5px; /* Optional, for rounded input field */
+    border: 1px solid #ccc;
+}
+
+/* Style for the dropdown results */
+#dropdown-results {
+    position: absolute;
+    top: 100%; /* Position it just below the input field */
+    left: 0;
+    width: 100%;
+    max-height: 300px; /* Increase the height if needed */
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: white; /* White text color */
+    border-radius: 5px; /* Optional, rounded dropdown */
+    border: 1px solid #444; /* Slightly darker border */
+    display: none; /* Hide initially */
+    z-index: 999; /* Ensure it stays above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+/* Style for each dropdown item */
+.dropdown-item {
+    display: flex; /* Align image and text side by side */
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item img {
+    width: 40px; /* Adjust the size of the poster */
+    height: 60px; /* Adjust the size of the poster */
+    margin-right: 10px; /* Space between image and title */
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
+}
+/* Style for the search bar container */
+#search-bar {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 5px; /* Optional, for rounded input field */
+    border: 1px solid #ccc;
+}
+
+/* Style for the dropdown results */
+#dropdown-results {
+    position: absolute;
+    top: 100%; /* Position it just below the input field */
+    left: 0;
+    width: 100%;
+    max-height: 300px; /* Increase the height if needed */
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: white; /* White text color */
+    border-radius: 5px; /* Optional, rounded dropdown */
+    border: 1px solid #444; /* Slightly darker border */
+    display: none; /* Hide initially */
+    z-index: 999; /* Ensure it stays above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+/* Style for each dropdown item */
+.dropdown-item {
+    display: flex; /* Align image and text side by side */
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item img {
+    width: 40px; /* Adjust the size of the poster */
+    height: 60px; /* Adjust the size of the poster */
+    margin-right: 10px; /* Space between image and title */
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
+}
+
+
+
+
+/* New styles added at the bottom */
+#search-bar {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0; /* Position at the top of the page */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    z-index: 1000; /* Ensure it’s on top of other content */
+    box-sizing: border-box;
+}
+
+#search-bar input {
+    width: 100%; /* Full width */
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for input */
+    border: none;
+    color: white;
+    outline: none;
+}
+
+#search-bar button {
+    padding: 10px;
+    background-color: #ff9900; /* Button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#search-bar button:hover {
+    background-color: #ff6600; /* Hover effect for button */
+}
+
+#dropdown-results {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 60px; /* Positioned below the input */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    z-index: 999; /* Dropdown above search bar */
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+}
+
+.dropdown-item img {
+    width: 40px;
+    height: 60px;
+    margin-right: 10px;
+}
+/* Initially hide the search bar */
+#search-bar {
+    display: none;  /* Ensures the search bar is hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    color: white;
+    padding: 10px;
+    z-index: 1000; /* Ensure it appears on top of everything */
+    box-sizing: border-box;
+}
+
+/* Show the search bar when it's toggled */
+#search-bar.visible {
+    display: block; /* Make it visible */
+}
+
+/* Styles for input field */
+#search-bar input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for input */
+    border: none;
+    color: white;
+    outline: none;
+}
+
+/* Button styles */
+#search-bar button {
+    padding: 10px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#search-bar button:hover {
+    background-color: #ff6600;
+}
+
+#dropdown-results {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    z-index: 999;
+}
+#search-bar {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position to overlay over the page */
+    top: 20px; /* Position it a bit below the top of the screen */
+    left: 50%; /* Horizontally center the bar */
+    transform: translateX(-50%); /* Center the search bar horizontally */
+    width: 60%; /* Set width of the search bar (adjustable) */
+    max-width: 600px; /* Max width to prevent it from becoming too wide */
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent dark background */
+    padding: 10px; /* Space around the input */
+    border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+/* Input Field */
+#search-bar input {
+    width: 100%; /* Full width of the search bar */
+    padding: 12px; /* Padding around the text */
+    font-size: 16px; /* Slightly larger font for readability */
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    border: 1px solid #fff; /* White border to contrast with the dark background */
+    border-radius: 4px; /* Slightly rounded corners */
+    color: white; /* White text color */
+    outline: none; /* Remove outline */
+}
+
+/* Button */
+#search-bar button {
+    padding: 12px; /* Matching padding */
+    background-color: #ff9900; /* Bright button color */
+    color: white; /* White text for the button */
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px; /* Button text size */
+    margin-top: 10px; /* Space between the input and button */
+    width: 100%; /* Full width of the search bar */
+}
+
+/* Hover effect for the button */
+#search-bar button:hover {
+    background-color: #e68900; /* Slightly darker when hovered */
+}
