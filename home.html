@@ -12,10 +12,10 @@
 <body>
     <div class="container">
         <div class="head">
-            <img src="Images/Vector.png" >
+            <img src="Images/Vector.png" alt="Header Image">
         </div>
         <div class="who">
-            <img src="Images/Who Is Watching_.png" alt="" class="who-image">
+            <img src="Images/Who Is Watching_.png" alt="Who Is Watching" class="who-image">
         </div>
         <div class="profiles"></div>
         <div class="manager-profiles">
@@ -25,33 +25,30 @@
     </div>
 
     <!-- Popup Form -->
-    <!-- Popup Form -->
-<div class="popup" id="popupForm">
-    <div class="popup-content">
-        <h3>Add Profile</h3>
-        <label for="profileName">Profile Name:</label>
-        <input type="text" id="profileName" placeholder="Enter name">
-        
-        <label for="profileType">Profile Type:</label>
-        <select id="profileType">
-            <option value="adult">Adult</option>
-            <option value="kid">Kid</option>
-        </select>
-        
-        <label>Select Profile Picture:</label>
-        <div class="profile-pictures">
-            <img src="Images/avatar.png" class="profile-pic-option" data-src="Images/avatar.png">
-            <img src="Images/avatar2.png" class="profile-pic-option" data-src="Images/avatar2.png">
-            <!-- Add more images as needed -->
+    <div class="popup" id="popupForm">
+        <div class="popup-content">
+            <h3>Add Profile</h3>
+            <label for="profileName">Profile Name:</label>
+            <input type="text" id="profileName" placeholder="Enter name">
+            
+            <label for="profileType">Profile Type:</label>
+            <select id="profileType">
+                <option value="adult">Adult</option>
+                <option value="kid">Kid</option>
+            </select>
+            
+            <label>Select Profile Picture:</label>
+            <div class="profile-pictures">
+                <img src="Images/avatar.png" class="profile-pic-option" data-src="Images/avatar.png" alt="Avatar 1">
+                <img src="Images/avatar2.png" class="profile-pic-option" data-src="Images/avatar2.png" alt="Avatar 2">
+                <!-- Add more images as needed -->
+            </div>
+            
+            <button id="saveProfile">Save</button>
+            <button id="cancelProfile">Cancel</button>
         </div>
-        
-        <button id="saveProfile">Save</button>
-        <button id="cancelProfile">Cancel</button>
     </div>
-</div>
-
 
     <script src="profiles.js"></script>
-
 </body>
 </html>
