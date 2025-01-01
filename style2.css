@@ -524,6 +524,30 @@ body {
     color: white;
     z-index: 999;
     transition: left .3s ease;
+    overflow-y: auto;
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect to background behind the sidebar */
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Customizing the sidebar scrollbar */
+.sidebar::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* A subtle white track with transparency */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* Subtle white thumb with transparency */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Slightly darker on hover */
 }
 
 .sidebar-content {

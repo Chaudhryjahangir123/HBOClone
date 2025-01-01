@@ -59,6 +59,7 @@ body {
 .movie-rating {
     font-size: 18px;
     margin: 10px 0;
+    border-radius:10px;
 }
 
 .rating-label {
@@ -85,7 +86,17 @@ body {
     margin-right: 10px;
 }
 
-#submit-rating, #watch-movie {
+#submit-rating {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#watch-movie {
+    
     padding: 10px 15px;
     background-color: #007bff;
     color: white;
@@ -98,3 +109,53 @@ body {
     background-color: #0056b3;
 }
 
+.comments-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.comments-section h2 {
+    margin-bottom: 10px;
+}
+
+#comments-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#comments-list li {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#new-comment {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#submit-comment {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#submit-comment:hover {
+    background-color: #0056b3;
+}
+
+.movie-rating-stars {
+    display: inline-block;
+    color: gold;
+    font-size: 20px;
+    margin-right: 5px;
+}

@@ -16,6 +16,7 @@
                 <h1 class="movie-title"></h1>
                 <div class="movie-rating">
                     <span class="rating-label">Rating:</span> 
+                    <span class="movie-rating-stars"></span>
                     <span class="movie-rating-value"></span>
                 </div>
                 <p class="movie-genre"></p>
@@ -31,18 +32,22 @@
             <div class="movie-trailer">
                 <h2>Watch the Trailer</h2>
                 <iframe class="movie-trailer-video" width="560" height="315" src="" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
-                <button id="watch-movie">Watch the Movie</button>
+                
             </div>
         </div>
         <div class="movie-description">
             <h2>About the Movie</h2>
             <p class="movie-description-text"></p>
         </div>
+        <div class="comments-section">
+            <h2>User Comments</h2>
+            <ul id="comments-list"></ul>
+            <textarea id="new-comment" placeholder="Leave a comment..."></textarea>
+            <button id="submit-comment">Submit Comment</button>
+        </div>
     </div>
-    
-    
     <script src="movieinfo.js"></script>
 </body>
 </html>
