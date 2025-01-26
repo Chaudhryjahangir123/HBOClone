@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Movie details
+function initializeMovieInfo() {
     const urlParams = new URLSearchParams(window.location.search);
     const movieTitle = urlParams.get('title');
 
@@ -53,65 +52,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Rating submission (real-time feedback and user interaction)
+    // Rating submission logic
     const submitRatingButton = document.querySelector('#submit-rating');
     const userRatingInput = document.querySelector('#user-rating');
-    const ratingFeedback = document.querySelector('#rating-feedback'); // Feedback element
-    const starsContainer = document.querySelector('.movie-rating-stars'); // To show dynamic stars
+    const ratingFeedback = document.querySelector('#rating-feedback');
+    const starsContainer = document.querySelector('.movie-rating-stars');
 
     if (submitRatingButton) {
         submitRatingButton.addEventListener('click', () => {
             const userRating = parseFloat(userRatingInput.value);
 
             if (!isNaN(userRating) && userRating >= 0 && userRating <= 10) {
-                // Update displayed rating
                 const movieRatingValue = document.querySelector('.movie-rating-value');
                 movieRatingValue.textContent = `User Rating: ${userRating}/10`;
 
-                // Update stars based on the user rating
                 updateStars(userRating);
-
-                // Display user feedback
                 ratingFeedback.textContent = `Thank you for rating! You rated this movie ${userRating}/10.`;
-                userRatingInput.value = '';  // Clear the input field
+                userRatingInput.value = '';  
             } else {
                 alert('Please enter a valid rating between 0 and 10.');
             }
         });
     }
 
-    // Function to update stars dynamically (real-time feedback)
-    userRatingInput.addEventListener('input', () => {
-        const rating = parseFloat(userRatingInput.value);
-        if (!isNaN(rating) && rating >= 0 && rating <= 10) {
-            updateStars(rating);  // Update stars on input change
-        }
-    });
-
     function updateStars(rating) {
-        starsContainer.innerHTML = ''; // Clear previous stars
-
-        // Handle full stars, half stars, and empty stars
+        starsContainer.innerHTML = '';
         const fullStars = Math.floor(rating);
         const halfStar = rating % 1 >= 0.5;
 
-        // Add filled stars
         for (let i = 0; i < fullStars; i++) {
-            starsContainer.innerHTML += '★'; // Or use an icon here
+            starsContainer.innerHTML += '★';
         }
 
-        // Add half star if needed
         if (halfStar) {
-            starsContainer.innerHTML += '☆'; // Or use an icon for half star
+            starsContainer.innerHTML += '☆';
         }
 
-        // Add empty stars to make a total of 5
         for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
-            starsContainer.innerHTML += '☆';  // Or use an icon for empty stars
+            starsContainer.innerHTML += '☆';
         }
     }
 
-    // Comments functionality
     const commentsList = document.querySelector('#comments-list');
     const newCommentInput = document.querySelector('#new-comment');
     const submitCommentButton = document.querySelector('#submit-comment');
@@ -127,4 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please enter a comment before submitting.');
         }
     });
-});
+}
+
+// Export for testing
+module.exports = { initializeMovieInfo };

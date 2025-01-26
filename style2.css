@@ -994,3 +994,46 @@ body {
     color: #fcfcfc; /* Movie title color */
     text-align: center; /* Center the text */
 }
+/* Profile Sidebar Styles */
+.profile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background-color: #2c2c2c;
+    color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 1000; /* Above other elements */
+}
+
+.profile-sidebar-content {
+    padding: 20px;
+}
+
+.profile-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-options li {
+    margin: 10px 0;
+}
+
+.profile-options a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.profile-options a:hover {
+    text-decoration: underline;
+}
+.faq-btn{
+    font-size: 19px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+}

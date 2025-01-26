@@ -183,10 +183,3 @@ h2 {
 .container2, .container3 {
     transition: transform 0.5s ease-in-out; /* You can tweak the duration for a slower/faster effect */
 }
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}

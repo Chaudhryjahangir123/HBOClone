@@ -195,3 +195,19 @@ function navigateToMovieInfo(movieTitle) {
     // Redirect to movieinfo.html with the title as a query parameter
     window.location.href = `movieinfo.html?title=${encodedTitle}`;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const profileSidebarBtn = document.getElementById('profile-sidebar-btn');
+    const profileSidebar = document.getElementById('profile-sidebar');
+
+    // Toggle profile sidebar when profile button is clicked
+    profileSidebarBtn.addEventListener('click', () => {
+        // Check if the sidebar is currently open
+        if (profileSidebar.style.right === '0px') {
+            // Hide sidebar (move it off-screen)
+            profileSidebar.style.right = '-300px';
+        } else {
+            // Open sidebar (slide it in from the right)
+            profileSidebar.style.right = '0px';
+        }
+    });
+});

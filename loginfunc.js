@@ -1,3 +1,22 @@
+function validateName(name) {
+    const nameRegex = /^[a-zA-Z]+$/;
+    return nameRegex.test(name);
+}
+
+function validateUsername(username) {
+    return username.length >= 4 && !username.includes(' ');
+}
+
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validatePassword(password) {
+    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+    return passwordRegex.test(password);
+}
+
 function handleSubmit() {
     // Collect form values
     const firstName = document.getElementById('firstname').value.trim();
@@ -42,3 +61,5 @@ function handleSubmit() {
     window.location.href = "login.html";
     return false; // Prevent form submission to server
 }
+
+module.exports = { handleSubmit, validateName, validateUsername, validateEmail, validatePassword };

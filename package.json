@@ -1,5 +1,6 @@
 {
   "name": "hboclone",
+  "type": "module",
   "version": "1.0.0",
   "description": "hello, I am Jahangir and I am a dumbass",
   "main": "loginfunc.js",
@@ -116,10 +117,18 @@
     "whatwg-url": "^13.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom"
+  }
+  
 }
