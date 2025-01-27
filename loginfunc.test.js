@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+
 // Import functions to test
 const { handleSubmit, validateName, validateUsername, validateEmail, validatePassword } = require('./loginfunc');
 

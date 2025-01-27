@@ -5,7 +5,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
-   background-image: url('Images/hbobg.png');
+    background-image: url('Images/hbobg.png');
     color: white;
 }
 .movie-trailer {
@@ -71,7 +71,33 @@ body {
     font-size: 16px;
     margin: 5px 0;
 }
-
+.button-container {
+    text-align: center;
+  }
+  
+  .gradient-button {
+    background: linear-gradient(45deg, #6a0dad, #1e90ff);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .gradient-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .gradient-button:active {
+    transform: scale(1);
+  }
+  
+  .hidden {
+    display: none;
+  }
 /* Movie Description */
 .movie-description {
     margin-top: 40px;
@@ -158,4 +184,12 @@ body {
     color: gold;
     font-size: 20px;
     margin-right: 5px;
+}
+.movie-page {
+    display: block;
+    padding: 20px;
+}
+.movie-poster, .movie-trailer-video {
+    display: block;
+    max-width: 100%;
 }

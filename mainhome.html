@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style2.css">
+    
 </head>
 <body>
     <div id="sidebar" class="sidebar">
@@ -88,19 +89,19 @@
     <!-- New Section for Movies, placed right below the Continue Watching section -->
     <div class="movie-section">
         <div class="container">
-            <div class="movie-box" data-title="Batman" data-poster="Images/Rectangle 1 (1).png" onclick="alert('Movie 1 clicked!')">
+            <div class="movie-box" data-title="Batman" data-poster="Images/Rectangle 1 (1).png" onclick="navigateToMovieInfo('Batman')">
                 <img src="Images/Rectangle 1 (1).png" alt="Movie 1" class="movie-img">
                 Batman 
             </div>
-            <div class="movie-box" data-title="Friends" data-poster="Images/Rectangle 1.png" onclick="alert('Movie 2 clicked!')">
+            <div class="movie-box" data-title="Friends" data-poster="Images/Rectangle 1.png" onclick="navigateToMovieInfo('Friends')">
                 <img src="Images/Rectangle 1.png" alt="Movie 2" class="movie-img">
                 Friends
             </div>
-            <div class="movie-box" data-title="The Secret Garden" data-poster="Images/M3.png" onclick="alert('Movie 3 clicked!')">
+            <div class="movie-box" data-title="The Secret Garden" data-poster="Images/M3.png" onclick="navigateToMovieInfo('The Secret Garden')">
                 <img src="Images/M3.png" alt="Movie 3" class="movie-img">
                 The Secret Garden
             </div>
-            <div class="movie-box" data-title="Watchmen" data-poster="Images/m4.png" onclick="alert('Movie 4 clicked!')">
+            <div class="movie-box" data-title="Watchmen" data-poster="Images/m4.png" onclick="navigateToMovieInfo('Watchmen')">
                 <img src="Images/m4.png" alt="Movie 4" class="movie-img">
                 Watchmen
             </div>
@@ -179,12 +180,14 @@
             </div>
         </div>
     </div>
+    <!-- this below is producer section -->
     <div class="movie3-section">
         <div class="headnewandt">
             <img src="Images/Title (1).png" alt="" class="headnew">
             <div class="slider2">
+                
                 <div class="container4">
-                    <div class="movie4-box" onclick="alert('Movie 1 clicked!')">
+                    <div class="movie4-box" onclick="alert('clicked!')">
                         <img src="Images/Card Stars.png" alt="Movie 1" class="movie4-img">
                         
                     </div>
@@ -216,8 +219,10 @@
             <li><a href="#">Logout</a></li>
         </ul>
     </div>
+    
 <script src="mainjava.js"></script>
-
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-df2b4649-687c-4c92-9a13-9449fca7d63c" data-elfsight-app-lazy></div>
 
 </body>
 </html>

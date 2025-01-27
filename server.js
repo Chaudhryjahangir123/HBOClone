@@ -63,6 +63,41 @@ app.get('/api/faqs', (req, res) => {
     res.json(faqs); // Sends the FAQ data as JSON
 });
 
+// Post comment
+app.post('/api/comments', (req, res) => {
+    const { movieTitle, username, commentText } = req.body;
+    if (!movieTitle || !username || !commentText) {
+        return res.status(400).send("Missing required fields");
+    }
+
+    // Save comment to MongoDB
+    const newComment = { movieTitle, username, commentText, date: new Date() };
+    db.collection('comments').insertOne(newComment)
+        .then(result => {
+            console.log('Comment added:', result);
+            res.status(201).send('Comment added successfully');
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).send("Error saving comment to database.");
+        });
+});
+
+// Get comments for a specific movie
+app.get('/api/comments/:movieTitle', (req, res) => {
+    const { movieTitle } = req.params;
+    
+    // Fetch comments for the specific movie from MongoDB
+    db.collection('comments').find({ movieTitle }).toArray()
+        .then(comments => {
+            res.json(comments); // Send comments as JSON
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).send("Error fetching comments.");
+        });
+});
+
 // Server listening
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");
